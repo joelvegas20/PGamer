@@ -19,20 +19,20 @@ const VideoGames = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    plataforms: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
-      // allowNull: false,
+    platforms: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false,
     },
-    imagen: {
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    release_date: {
-      type: DataTypes.DATE,
+    released: {
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     rating: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
       allowNull: false,
     },
   },
@@ -41,6 +41,7 @@ const VideoGames = sequelize.define(
     freezeTableName: true,
   }
 );
+
 
 // Relationships.
 VideoGames.belongsToMany(Genres , {through: "video_games_genres"});

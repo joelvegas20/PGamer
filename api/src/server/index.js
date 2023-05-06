@@ -8,7 +8,7 @@ function main() {
   server.listen(3001, async () => {
     try {
 
-      await sequelize.sync();
+      await sequelize.sync({ force: true });
 
     } catch (error) {
       console.log(error.message);

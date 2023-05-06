@@ -1,21 +1,21 @@
+
+
+require("dotenv").config();
 const { Router } = require("express");
+const { getAllGenres } = require("../controllers/genders.controlles");
+
 const {
   getAllVideogames,
   getVideogameById,
   getVideogameByName,
   postVideogame,
-  getAllGenres,
 } = require("../controllers/videogames.controllers");
 
 const router = Router();
 
-// Principal Route
-router.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 // Videogames Routes.
-router.get("/videogames", getAllVideogames);
+router.get("/videogames",  getAllVideogames);
 
 router.get("/videogames/name", getVideogameByName);
 

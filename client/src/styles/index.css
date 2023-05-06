@@ -1,0 +1,25 @@
+@import url('./fonts.css');
+
+:root {
+  font-family: Press-Start-2P , sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  color: black;
+  background-color: #F4FCD3;
+
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+

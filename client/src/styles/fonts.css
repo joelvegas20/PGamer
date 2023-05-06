@@ -1,0 +1,9 @@
+/* Regular Fonts */
+
+/* Press Start2P */
+@font-face {
+    font-family: 'Press-Start-2P';
+    src: url('../assets/fonts/PressStart2P.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

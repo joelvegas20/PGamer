@@ -4,6 +4,7 @@ const { Sequelize } = require("sequelize");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DIALECT, DEBUG } = process.env;
 
 if (DEBUG === "true") {
+  
   const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "./database.sqlite",
@@ -11,16 +12,18 @@ if (DEBUG === "true") {
   });
   
   module.exports = sequelize;
+
 } else {
 
   const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
     host: DB_HOST,
     dialect: DIALECT,
-    dialectOptions: {
-      ssl: {
-        rejectUnauthorized: false,
-      },
-    },
+    // ! Connecting with CloudDatabase
+    // dialectOptions: {
+    //   ssl: {
+    //     rejectUnauthorized: false,
+    //   },
+    // },
     logging: false,
   });  
 
