@@ -1,0 +1,28 @@
+# Docker Version
+version: '3.9'
+
+# Containers with Red.
+services:
+  # Backend Container
+  back:
+    # Project dir and Build file
+    build:
+      # Dir with Dockerfile
+      context: ./api
+      dockerfile: Dockerfile
+
+    # Mapping Ports.
+    ports:
+      - '5173:5173'
+
+  # Frontend Container
+  front:
+
+    # Project dir and Build file
+    build:
+      # Dir with Dockerfile
+      context: ./client
+      dockerfile: Dockerfile
+    # Mapping Ports.
+    ports:
+      - '3001:3001'
